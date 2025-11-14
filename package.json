@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.5.0",
+    "@astrojs/vercel": "^9.0.0",
     "@tailwindcss/vite": "^4.1.17",
     "africastalking": "^0.7.7",
     "astro": "^5.15.6",
