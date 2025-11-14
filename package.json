@@ -1,0 +1,18 @@
+{
+  "name": "coach-k",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.5.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "africastalking": "^0.7.7",
+    "astro": "^5.15.6",
+    "tailwindcss": "^4.1.17"
+  }
+}

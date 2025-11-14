@@ -1,0 +1,30 @@
+---
+// src/layouts/Layout.astro
+// Shared layout component with Tailwind CSS integration
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Stop Guessing. Start Training. | Free 5-Day Fitness Kickstart",
+  description = "Get my FREE 5-Day Fitness Kickstart plan, sent right to your phone."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coach Kariro | Fitness</title>
+  <meta name="description" content={description}>
+</head>
+
+<body class="bg-zinc-900 text-zinc-100 font-sans antialiased">
+  <slot />
+</body>
+</html>
+

@@ -1,0 +1,270 @@
+---
+// src/pages/index.astro
+// Fitness Influencer MVP - Phone-first SMS funnel landing page
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- ========================================
+       SECTION 1: HERO
+  ========================================= -->
+  <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-zinc-900">
+    
+    <!-- Background Image -->
+    <img 
+      src="/coach-k.jpg"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+    />
+    
+    <!-- Dark Overlay for Text Readability -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        Stop Guessing. <span class="text-emerald-400">Start Training with Coach Kariro.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-zinc-300 mb-8">
+        Get my FREE 5-Day Fitness Kickstart plan, sent right to your phone.
+      </p>
+      
+      <!-- Scroll Down CTA (optional visual enhancement) -->
+      <a href="#optin" class="inline-block text-emerald-400 hover:text-emerald-300 transition-colors">
+        <svg class="w-8 h-8 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 2: OPT-IN FORM (Most Important)
+  ========================================= -->
+  <section id="optin" class="w-full py-20 bg-zinc-800">
+    <div class="max-w-xl mx-auto px-6">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Transform?
+        </h2>
+        <p class="text-zinc-300 text-lg">
+          Enter your phone number below and get instant access to your free plan.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="smsOptInForm" class="bg-zinc-900 p-8 rounded-lg shadow-2xl border border-zinc-700">
+        
+        <!-- Phone Number Input -->
+        <div class="mb-6">
+          <label for="phoneNumber" class="block text-sm font-medium text-zinc-300 mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="07..."
+            required
+            class="w-full px-4 py-3 bg-zinc-800 border border-zinc-600 rounded-lg text-zinc-100 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+          />
+        </div>
+
+        <!-- Consent Checkbox -->
+        <div class="mb-6">
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input
+              type="checkbox"
+              id="smsConsent"
+              name="smsConsent"
+              required
+              class="mt-1 w-5 h-5 text-emerald-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-emerald-500"
+            />
+            <span class="text-sm text-zinc-400">
+              I agree to receive promotional SMS & WhatsApp messages from Coach Kariro. (Required)
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          id="submitButton"
+          class="w-full bg-emerald-500 hover:bg-emerald-600 text-zinc-900 font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-100 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        >
+          GET THE FREE PLAN
+        </button>
+
+        <!-- Feedback Message -->
+        <div id="feedbackMessage" class="mt-4 text-center hidden"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 3: SOCIAL PROOF
+  ========================================= -->
+  <section class="w-full py-16 bg-zinc-900">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <p class="text-center text-zinc-400 text-sm uppercase tracking-wider mb-8">
+        As seen on:
+      </p>
+
+      <!-- Social Platform Logos -->
+      <div class="flex justify-center items-center space-x-12 flex-wrap gap-8">
+        
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/bura_rated?igsh=NDNreGg5OW16ZGph" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-emerald-400 transition-colors">
+          <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@burarated?_r=1&_t=ZS-91OPHQDGcRZ" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-emerald-400 transition-colors">
+          <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 4: EVENTS & COMMUNITY
+  ========================================= -->
+  <section class="w-full py-20 bg-zinc-800">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Join the Community
+      </h2>
+      
+      <p class="text-lg text-zinc-300 mb-8 leading-relaxed">
+        Beyond the workouts, we're building something special. Join our weekly community runs every Saturday morning and our monthly outdoor hikes exploring Kenya's beautiful landscapes. Train together, grow together.
+      </p>
+
+      <a
+        href="https://forms.google.com/your-form-id-here"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-emerald-500 hover:bg-emerald-600 text-zinc-900 font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-100"
+      >
+        Learn More & Join Waitlist
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 5: FOOTER
+  ========================================= -->
+  <footer class="w-full py-12 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Social Media Icons -->
+      <div class="flex justify-center space-x-8 mb-6">
+        
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/bura_rated?igsh=NDNreGg5OW16ZGph" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-emerald-400 transition-colors" aria-label="Instagram">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@burarated?_r=1&_t=ZS-91OPHQDGcRZ" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-emerald-400 transition-colors" aria-label="TikTok">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-center text-zinc-500 text-sm">
+        &copy; {new Date().getFullYear()} Coach Kariro. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- ========================================
+       AJAX FORM HANDLING SCRIPT
+  ========================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('smsOptInForm');
+      const submitButton = document.getElementById('submitButton');
+      const feedbackMessage = document.getElementById('feedbackMessage');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const phoneNumber = document.getElementById('phoneNumber').value.trim();
+        const smsConsent = document.getElementById('smsConsent').checked;
+
+        // Basic validation (HTML5 required attributes handle most of this)
+        if (!phoneNumber || !smsConsent) {
+          showFeedback('error', '❌ Please fill in all required fields.');
+          return;
+        }
+
+        // Set loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'SENDING...';
+        feedbackMessage.classList.add('hidden');
+
+        try {
+          // Send AJAX request to our serverless function
+          const response = await fetch('/api/send-sms', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              phoneNumber: phoneNumber,
+              smsConsent: smsConsent,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            // Success
+            showFeedback('success', '✅ Success! Check your SMS.');
+            form.reset();
+          } else {
+            // Error from server
+            showFeedback('error', '❌ Error. Please try again.');
+          }
+        } catch (error) {
+          // Network or other error
+          console.error('Form submission error:', error);
+          showFeedback('error', '❌ Error. Please try again.');
+        } finally {
+          // Reset button state
+          submitButton.disabled = false;
+          submitButton.textContent = 'GET THE FREE PLAN';
+        }
+      });
+
+      function showFeedback(type, message) {
+        feedbackMessage.textContent = message;
+        feedbackMessage.classList.remove('hidden', 'text-emerald-400', 'text-red-400');
+        
+        if (type === 'success') {
+          feedbackMessage.classList.add('text-emerald-400');
+        } else {
+          feedbackMessage.classList.add('text-red-400');
+        }
+      }
+    });
+  </script>
+</Layout>
